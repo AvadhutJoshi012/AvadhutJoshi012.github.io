@@ -1,0 +1,213 @@
+:root {
+    --bg: #0B0B0F;
+    --card: #111827;
+    --text: #E5E7EB;
+    --text-dim: #9CA3AF;
+    --accent: #7C3AED;
+    --accent-glow: rgba(124, 58, 237, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.accent-text { color: var(--accent); }
+.section { padding: 8rem 0; }
+.bg-alt { background-color: #0D1117; }
+
+/* Navbar */
+.navbar {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    padding: 1.5rem 0; background: rgba(11, 11, 15, 0.8);
+    backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: 800; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.btn-resume { background: var(--accent); padding: 0.6rem 1.2rem; border-radius: 5px; font-weight: 600 !important; }
+
+/* Hero */
+.hero { height: 100vh; display: flex; align-items: center; }
+.hero-content { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; }
+.hero h1 { font-size: 4.5rem; margin-bottom: 1rem; }
+.hero h2 { font-size: 2rem; height: 3rem; font-family: 'Fira Code', monospace; }
+.hero p { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; }
+
+.img-outline {
+    width: 350px; height: 450px; border: 4px solid var(--accent);
+    border-radius: 15px; position: relative;
+}
+.img-outline img {
+    width: 100%; height: 100%; object-fit: cover;
+    position: absolute; top: 20px; left: 20px;
+    border-radius: 15px; filter: grayscale(50%); transition: 0.5s;
+}
+.img-outline:hover img { top: 0; left: 0; filter: grayscale(0%); }
+
+/* About Me */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 3rem;
+}
+
+.about-lead {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-main p {
+  color: var(--text-dim);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.about-highlights {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--accent);
+}
+
+.about-highlights h4 {
+  margin-bottom: 1.2rem;
+}
+
+.about-highlights ul {
+  list-style: none;
+}
+
+.about-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.about-highlights i {
+  color: var(--accent);
+}
+
+/* Education */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.edu-card {
+  background: var(--card);
+  padding: 2.5rem;
+  border-radius: 15px;
+  position: relative;
+  transition: 0.3s;
+  border-bottom: 4px solid var(--accent);
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px var(--accent-glow);
+}
+
+.edu-year {
+  font-size: 0.8rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.edu-inst {
+  color: var(--text-dim);
+  margin: 0.5rem 0;
+}
+
+.edu-score {
+  margin: 0.5rem 0;
+}
+
+.edu-desc {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* Skills Icons */
+.skill-icons { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 1.5rem; }
+.icon-box {
+    background: var(--card); padding: 1rem; border-radius: 10px;
+    display: flex; flex-direction: column; align-items: center;
+    width: 90px; transition: 0.3s; border: 1px solid transparent;
+}
+.icon-box i { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.icon-box:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 0 15px var(--accent-glow); }
+.icon-box span { font-size: 0.7rem; font-weight: 600; }
+
+/* Achievement Cards */
+.achieve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.achieve-card {
+    background: var(--card); padding: 2.5rem; border-radius: 15px;
+    border-bottom: 4px solid var(--accent); transition: 0.3s;
+}
+.achieve-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; }
+.achieve-card h4 { margin-bottom: 1rem; font-size: 1.3rem; }
+.achieve-card p { color: var(--text-dim); line-height: 1.6; }
+
+/* Certifications Card */
+#certifications .project-card {
+    height: 350px;               /* visible increase */
+    background: linear-gradient(180deg, #0f172a, #020617);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Certificate image */
+#certifications .project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;         /* correct for certificates */
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Animations */
+.reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+.section-title { font-size: 2.5rem; margin-bottom: 3rem; }
+.section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent); margin-top: 10px; }
+
+/* Projects */
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.project-card { background: var(--card); border-radius: 15px; overflow: hidden; }
+.project-card img { width: 100%; height: 200px; object-fit: cover; }
+.p-content { padding: 1.5rem; }
+.tags { margin: 1rem 0; display: flex; gap: 0.5rem; }
+.tags span { font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 3px 10px; border-radius: 5px; }
+.btn-link { color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem; }
+
+/* Footer */
+.footer { text-align: center; padding: 5rem 0 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.contact-methods { margin: 2rem 0; display: flex; justify-content: center; gap: 2rem; color: var(--text-dim); }
+.footer-bottom { margin-top: 4rem; opacity: 0.5; font-size: 0.8rem; }
+
+@media (max-width: 768px) {
+    .hero-content, .projects-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 3rem; }
+    .img-outline { width: 280px; height: 280px; margin: 0 auto; }
+}

@@ -20,7 +20,7 @@ function type() {
     i = (i + 1) % roles.length;
   }
 
-  setTimeout(type, del ? 60 : 120);
+  setTimeout(type, del ? 90 : 120);
 }
 type();
 
@@ -34,3 +34,17 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+// Auto-close mobile menu on link click
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
